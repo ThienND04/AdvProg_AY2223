@@ -20,7 +20,15 @@ double mySqrt(double x);
 ***/
 double myCos(double x) 
 {
-    return 0.0;
+    double tmp = 1, ans = 1;
+    int dau = 1;
+    
+    for(int i = 0; i < 100; i ++) {
+        dau *= -1;
+        tmp = tmp * x * x / ((i * 2 + 1) * (i * 2 + 2));
+        ans += dau * tmp;
+    }
+    return tmp;
 }
 
 /***
@@ -31,7 +39,7 @@ double myCos(double x)
 ***/
 double mySin(double x)
 {
-    return 0.0;
+    return (x - pow(x, 3) / 6 + pow(x, 5) / 120 - pow(x, 7) / 5040);
 }
 
 
@@ -47,6 +55,11 @@ double mySqrt(double x) {
         exit(1);
     }
 
+    double result = x;
+
+    for(int i = 0; i < 100; i ++){
+        result = result - (result - x / result) / 2; 
+    }
     
     return 0;
 }

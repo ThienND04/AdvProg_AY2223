@@ -12,4 +12,4 @@ test:
 	chmod +x calculusTest
 	./calculusTest
 clean:
-	rm -rf *.o calculus calculusTest
+	rm -rf *.o calculus calculusTest main
