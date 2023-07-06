@@ -17,7 +17,7 @@ using std::cin;
 int generateRandomNumber(const int min, const int max)
 {
     // TODO: Return a random integer number between min and max
-    return rand() % (max - min) + min;
+    return rand() % (max - min + 1) + min;
 }
 
 vector<string> readWordListFromFile(const string& filePath)
@@ -70,7 +70,7 @@ string chooseWordFromList(const vector<string>& wordList, int index)
     string answer = wordList[index];
 
     for(unsigned int i = 0; i < answer.size(); i ++){
-        if(answer[i] >= 'A' && answer[i] <= 'Z') answer += 32;
+        if(answer[i] >= 'A' && answer[i] <= 'Z') answer[i] += 32;
     }
 
     return answer;
@@ -124,7 +124,7 @@ void updateSecretWord(string& secretWord, const char ch, const string& word)
 ***/
 void updateEnteredChars(const char ch, string& chars){
     // TODO: append the character ch is in end of the text chars
-    chars += ch;
+    chars = chars + ch + " ";
 }
 
 /***
