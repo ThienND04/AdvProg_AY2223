@@ -15,4 +15,4 @@ test:
 	./painterTest
 
 clean:
-	rm -rf *.o main painterTest
+	rm -rf *.o main painterTest main

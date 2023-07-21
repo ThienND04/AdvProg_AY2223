@@ -43,6 +43,8 @@ bool verifyJumpForward(int numPixel, double angle, int curX, int curY, int diffX
     painter.jumpForward(numPixel);
     int diffX_ = painter.getX() - curX;
     int diffY_ = painter.getY() - curY;
+
+    std::cout << painter.getX() << " " << painter.getY() << "\n";
     // Alowing some slack gap
     if (abs(diffX-diffX_) < 2 && abs(diffY-diffY_) < 2) {
         return true;
