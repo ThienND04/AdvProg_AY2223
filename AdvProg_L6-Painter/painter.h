@@ -3,6 +3,7 @@
 
 #include <cmath>
 #include <cstdlib>
+#include <ctime>
 
 //Mac
 #include <SDL2/SDL.h>
