@@ -45,6 +45,7 @@ bool verifyFilterWordsByMask(const vector<string>& words, const string& mask, ch
 
 bool verifyFindBestChar(const vector<string>& candidateWords, const set<char>& selectedChars, char answer){
     char myAnswer = findBestChar(candidateWords, selectedChars);
+    cout << endl << myAnswer << " " << answer << "\n";
     return myAnswer == answer;
 }
 bool GetWordMask(char nextChar, string answer){
