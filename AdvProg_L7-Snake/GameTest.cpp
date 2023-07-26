@@ -79,7 +79,6 @@ bool verifySnakeMoveTo(CellType cellType, GameStatus expectedStatus){
   Game gameTest(BOARD_WIDTH, BOARD_HEIGHT);
   Position movingPos(rand()%gameTest.getWidth(), rand()%gameTest.getHeight());
   int previousScore = gameTest.getScore();
-
   gameTest.setCellType(movingPos, cellType);
   gameTest.snakeMoveTo(movingPos);
   
@@ -88,6 +87,8 @@ bool verifySnakeMoveTo(CellType cellType, GameStatus expectedStatus){
   }
 
   if (cellType == CELL_CHERRY){
+    cout << "\nPre score: " << previousScore << "\n";
+    cout << "Cur score: " << gameTest.getScore() << "\n";
     return previousScore + 1 == gameTest.getScore() && getPositionByCellTypeInBoard(CELL_CHERRY, gameTest) != nullptr;
   }
 
